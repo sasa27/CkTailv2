@@ -56,11 +56,11 @@ The models of the components are generated in the folder **\<output\>/dot**.
 
 
 ## Contents
-**CkTail/src/** contains the implementation of the method. (eclipse project)
+**CkTailV2/src/** contains the implementation of the method. (eclipse project)
 
-**CkTail/examples/** contains examples of action log and regex.
+**CkTailV2/examples/** contains examples of action log and regex.
 
-**CkTail/RESULTS/** The folder that will contains the results for the cases in **CkTail/log**. The results from the case in **CkTail/examples/** are already inside.
+**CkTailV2/RESULTS/** The folder that will contains the results for the cases in **CkTail/log**. The results from the case in **CkTailV2/examples/** are already inside.
 
 
 ## TODO
