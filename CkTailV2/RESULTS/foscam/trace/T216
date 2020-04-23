@@ -1,0 +1,8 @@
+!/html/cfg/bs_time.html(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/bs_time.html|||310840086)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+!/html/cfg/bs_time.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/bs_time.js|||310840086)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/javascript)
+!/html/cfg/bs_base.html(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/bs_base.html|||310840086)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+!/html/cfg/bs_base.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/bs_base.js|||310840086)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/javascript)

@@ -1,0 +1,4 @@
+?/mobile/binary(Host=192.168.13.156|||Dest=205.204.101.237|||Verb=POST|||Uri=/mobile/binary|||policy=3103|||output=bin)
+!OK(Host=205.204.101.237|||Dest=192.168.13.156|||status=200|||response=OK|||body=06d0a152346cbc9638d5985ce7bfcbb5fa7bd7af2d76bc4706b1c4376b9ebb8914cc498bb3cc8b0d1ea97adcbb64ac7a62103880250ec114e2141c6b1ef58ce0877b38b19468c909a6581bc7cb2f65f9766507ae3c859a824db1bb72e99357fd)
+?/mobile/binary(Host=192.168.13.156|||Dest=205.204.101.237|||Verb=POST|||Uri=/mobile/binary|||policy=3103|||output=bin)
+!OK(Host=205.204.101.237|||Dest=192.168.13.156|||status=200|||response=OK|||body=49e97f73894096d676c0d8ed3e60e7ae48b8be992d42c0574aad135495bcce488bc43da48944d60b846ec58331a7ba6413ae2e62094f67e6e0a86557e521675de07551bbd9bc72feb0748844bbce430db0b7e85df3bec632a746e8acaae77583)

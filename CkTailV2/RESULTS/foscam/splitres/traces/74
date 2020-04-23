@@ -1,0 +1,6 @@
+/lg/ENU.xml(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/lg/ENU.xml|||310840086)
+OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK)
+/html/login.html(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/login.html|||310840086)
+OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+/css/login.css(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/css/login.css|||310840086)
+OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/css)

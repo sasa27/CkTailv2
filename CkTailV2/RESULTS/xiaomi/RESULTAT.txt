@@ -1,0 +1,85 @@
+216.58.213.163.dot contains :
+4 states
+4 transitions
+
+183.84.6.21.dot contains :
+4 states
+6 transitions
+
+203.205.146.45.dot contains :
+2 states
+2 transitions
+
+216.58.213.170.dot contains :
+3 states
+4 transitions
+
+52.221.0.100.dot contains :
+2 states
+2 transitions
+
+216.58.204.138.dot contains :
+2 states
+2 transitions
+
+192.168.13.53.dot contains :
+76 states
+127 transitions
+
+216.58.204.99.dot contains :
+2 states
+2 transitions
+
+172.217.18.196.dot contains :
+2 states
+2 transitions
+
+192.168.13.1.dot contains :
+58 states
+70 transitions
+
+120.92.96.244.dot contains :
+40 states
+73 transitions
+
+192.168.13.156.dot contains :
+105 states
+126 transitions
+
+192.168.13.151.dot contains :
+45 states
+76 transitions
+
+13.228.253.39.dot contains :
+36 states
+58 transitions
+
+163.171.128.150.dot contains :
+2 states
+2 transitions
+
+205.204.101.237.dot contains :
+4 states
+4 transitions
+
+120.92.96.246.dot contains :
+37 states
+54 transitions
+
+213.186.33.3.dot contains :
+16 states
+17 transitions
+
+42.62.48.115.dot contains :
+10 states
+18 transitions
+
+--------------------------------
+TOTAL :
+450 States
+649 Transitions
+Correlation Duration: 89 ms
+Clustering Duration: 18 ms
+KTail Duration: 74 ms
+Parser Duration: 199 ms
+Program Duration: 420 ms

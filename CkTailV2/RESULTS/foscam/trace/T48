@@ -1,0 +1,4 @@
+?/html/cfg/set_guid.html(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/set_guid.html|||302491375)
+!OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+?/html/cfg/set_guid.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/set_guid.js|||302491375)
+!OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/javascript)

@@ -1,0 +1,3 @@
+?switchcmd(Host=192.168.43.201|||Dest=192.168.43.203|||group=02|||switchcmd=On)
+type(Host=192.168.43.203|||Dest=192.168.43.203|||type=switch|||switchcmd=On)
+!response(Host=192.168.43.203|||Dest=192.168.43.201|||status=0300|||response=00)

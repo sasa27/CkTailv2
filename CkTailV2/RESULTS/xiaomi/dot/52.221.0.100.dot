@@ -1,0 +1,8 @@
+digraph LTS {
+S00[shape=point]
+S1[label=S1,shape=circle];
+S2[label=S2,shape=circle];
+S00 -> S1
+S1 -> S2[label ="?/mistats/v2(Host=192.168.13.156|||Dest=52.221.0.100|||Verb=POST|||Uri=/mistats/v2|||type=application/x-www-form-urlencoded)"];
+S2 -> S1[label ="!OK(Host=52.221.0.100|||Dest=192.168.13.156|||status=200|||response=OK|||type=application/json)"];
+}

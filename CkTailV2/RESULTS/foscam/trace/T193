@@ -1,0 +1,2 @@
+!NTP(Host=192.168.43.17|||Dest=192.168.43.4|||Version=3|||request=client)
+?NTP(Host=192.168.43.4|||Dest=192.168.43.17|||Version=3|||response=server)

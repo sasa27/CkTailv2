@@ -1,0 +1,2 @@
+!Standard query(Host=192.168.13.156|||Dest=192.168.13.1|||PTR 156.13.168.192.in-addr.arpa)
+?Standard query response(Host=192.168.13.1|||Dest=192.168.13.156|||PTR 156.13.168.192.in-addr.arpa|||PTR android-ea48715c2300ac2a)

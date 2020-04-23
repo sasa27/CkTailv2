@@ -1,0 +1,35 @@
+digraph LTS {
+S00[shape=point]
+S1[label=S1,shape=circle];
+S2[label=S2,shape=circle];
+S3[label=S3,shape=circle];
+S4[label=S4,shape=circle];
+S5[label=S5,shape=circle];
+S6[label=S6,shape=circle];
+S7[label=S7,shape=circle];
+S8[label=S8,shape=circle];
+S9[label=S9,shape=circle];
+S10[label=S10,shape=circle];
+S11[label=S11,shape=circle];
+S12[label=S12,shape=circle];
+S13[label=S13,shape=circle];
+S00 -> S1
+S1 -> S2[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.201|||group=02|||switchcmd=On)"];
+S1 -> S4[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.201|||group=02|||switchcmd=Off)"];
+S1 -> S5[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.201|||group=02|||switchcmd=Off)"];
+S1 -> S8[label ="!switchcmd(Host=192.168.43.201|||Dest=192.168.43.203|||group=02|||switchcmd=Off)"];
+S1 -> S9[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.201|||group=02|||switchcmd=On)"];
+S2 -> S3[label ="!switchcmd(Host=192.168.43.201|||Dest=192.168.43.203|||group=02|||switchcmd=On)"];
+S3 -> S4[label ="?response(Host=192.168.43.203|||Dest=192.168.43.201|||status=0300|||response=00)"];
+S3 -> S6[label ="?response(Host=192.168.43.203|||Dest=192.168.43.201|||status=0300|||response=00)"];
+S4 -> S1[label ="!response(Host=192.168.43.201|||Dest=192.168.43.76|||status=0300|||response=00)"];
+S5 -> S3[label ="!switchcmd(Host=192.168.43.201|||Dest=192.168.43.203|||group=02|||switchcmd=Off)"];
+S6 -> S7[label ="!response(Host=192.168.43.201|||Dest=192.168.43.76|||status=0300|||response=00)"];
+S7 -> S2[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.201|||group=02|||switchcmd=On)"];
+S8 -> S1[label ="?response(Host=192.168.43.203|||Dest=192.168.43.201|||status=0300|||response=00)"];
+S9 -> S10[label ="!switchcmd(Host=192.168.43.201|||Dest=192.168.43.203|||group=02|||switchcmd=On)"];
+S10 -> S11[label ="?response(Host=192.168.43.203|||Dest=192.168.43.201|||status=0300|||response=01)"];
+S11 -> S12[label ="!response(Host=192.168.43.201|||Dest=192.168.43.76|||status=0300|||response=01)"];
+S12 -> S13[label ="?link(Host=192.168.43.76|||Dest=192.168.43.201|||link=200000)"];
+S13 -> S7[label ="!response(Host=192.168.43.201|||Dest=192.168.43.76|||response=280000)"];
+}

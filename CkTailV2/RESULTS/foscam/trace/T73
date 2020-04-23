@@ -1,0 +1,8 @@
+!/html/cfg/dev_state.html(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/dev_state.html|||310840086)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+!/html/cfg/dev_state.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/dev_state.js|||310840086)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/javascript)
+!/html/cfg/dev_log.html(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/dev_log.html|||310840086)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+!/html/cfg/dev_log.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/dev_log.js|||310840086)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/javascript)

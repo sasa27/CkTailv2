@@ -1,0 +1,9 @@
+digraph LTS {
+S00[shape=point]
+S1[label=S1,shape=circle];
+S2[label=S2,shape=circle];
+S00 -> S1
+S1 -> S2[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.202|||group=01|||switchcmd=Off)"];
+S1 -> S2[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.202|||group=01|||switchcmd=On)"];
+S2 -> S1[label ="!response(Host=192.168.43.202|||Dest=192.168.43.76|||status=0300|||response=00)"];
+}

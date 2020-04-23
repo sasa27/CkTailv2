@@ -1,0 +1,2 @@
+?/mistats/v2(Host=192.168.13.156|||Dest=52.221.0.100|||Verb=POST|||Uri=/mistats/v2|||type=application/x-www-form-urlencoded)
+!OK(Host=52.221.0.100|||Dest=192.168.13.156|||status=200|||response=OK|||type=application/json)

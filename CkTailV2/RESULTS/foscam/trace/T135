@@ -1,0 +1,8 @@
+!/html/cfg/net_wifi.html(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/net_wifi.html|||302491375)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+!/html/cfg/net_wifi.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/net_wifi.js|||302491375)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/javascript)
+!/html/cfg/net_ip.html(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/net_ip.html|||302491375)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+!/html/cfg/net_ip.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/net_ip.js|||302491375)
+?OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/javascript)

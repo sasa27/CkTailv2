@@ -1,0 +1,2 @@
+?Standard query(Host=192.168.13.156|||Dest=192.168.13.1|||A android.bugly.qq.com)
+!Standard query response(Host=192.168.13.1|||Dest=192.168.13.156|||A android.bugly.qq.com|||CNAME rqd.sparta.mig.tencent-cloud.net|||A 203.205.146.45)

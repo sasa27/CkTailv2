@@ -1,0 +1,5 @@
+digraph DAG {
+S0[label="192.168.43.124",fillcolor=grey,style=filled];
+S1[label="192.168.43.76"];
+S0 -> S1
+}

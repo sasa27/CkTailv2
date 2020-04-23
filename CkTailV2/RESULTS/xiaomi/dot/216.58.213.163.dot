@@ -1,0 +1,12 @@
+digraph LTS {
+S00[shape=point]
+S1[label=S1,shape=circle];
+S2[label=S2,shape=circle];
+S3[label=S3,shape=circle];
+S4[label=S4,shape=circle];
+S00 -> S1
+S1 -> S2[label ="?/s/ptsansnarrow/v8/BngRUXNadjH0qYEzV7ab-oWlsbCGwR2oefDo.woff2(Host=192.168.13.156|||Dest=216.58.213.163|||Verb=GET|||Uri=/s/ptsansnarrow/v8/BngRUXNadjH0qYEzV7ab-oWlsbCGwR2oefDo.woff2)"];
+S2 -> S3[label ="!OK(Host=216.58.213.163|||Dest=192.168.13.156|||status=200|||response=OK|||type=font/woff2)"];
+S3 -> S4[label ="?/s/ptsans/v9/jizaRExUiTo99u79D0KExcOPIDU.woff2(Host=192.168.13.156|||Dest=216.58.213.163|||Verb=GET|||Uri=/s/ptsans/v9/jizaRExUiTo99u79D0KExcOPIDU.woff2)"];
+S4 -> S1[label ="!OK(Host=216.58.213.163|||Dest=192.168.13.156|||status=200|||response=OK|||type=font/woff2)"];
+}

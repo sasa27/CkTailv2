@@ -1,0 +1,8 @@
+/html/cfg/css.css(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/css.css|||310840086)
+OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+/html/cfg/dev_info.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/dev_info.js|||310840086)
+OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/javascript)
+/html/cfg/dev_ses.html(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/dev_ses.html|||310840086)
+OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+/html/cfg/dev_ses.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/html/cfg/dev_ses.js|||310840086)
+OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/javascript)

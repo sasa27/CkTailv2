@@ -1,0 +1,2 @@
+Standard query(Host=192.168.13.156|||Dest=192.168.13.1|||A www.google.com)
+Standard query response(Host=192.168.13.1|||Dest=192.168.13.156|||A www.google.com|||A 172.217.18.196)

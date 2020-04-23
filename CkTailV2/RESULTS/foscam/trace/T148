@@ -1,0 +1,6 @@
+?/js/divBox.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/js/divBox.js|||310840086)
+!OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/html)
+?/js/left.js(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/js/left.js|||310840086)
+!OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/javascript)
+?/cgi-bin/CGIProxy.fcgi(Host=192.168.43.1|||Dest=192.168.43.17|||Verb=GET|||Uri=/cgi-bin/CGIProxy.fcgi|||cmd=getSWFlag)
+!OK(Host=192.168.43.17|||Dest=192.168.43.1|||status=200|||response=OK|||text/plain|||3c4347495f526573756c743e0a202020203c726573756c743e303c2f726573756c743e0a202020203c666c61673e303031313c2f666c61673e0a3c2f4347495f526573756c743e0a)

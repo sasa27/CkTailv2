@@ -1,0 +1,33 @@
+192.168.43.102.dot contains :
+4 states
+6 transitions
+
+192.168.43.201.dot contains :
+24 states
+35 transitions
+
+192.168.43.203.dot contains :
+2 states
+3 transitions
+
+192.168.43.76.dot contains :
+37 states
+78 transitions
+
+192.168.43.101.dot contains :
+10 states
+20 transitions
+
+192.168.43.202.dot contains :
+7 states
+11 transitions
+
+--------------------------------
+TOTAL :
+84 States
+153 Transitions
+Correlation Duration: 113 ms
+Clustering Duration: 55 ms
+KTail Duration: 37 ms
+Parser Duration: 57 ms
+Program Duration: 348 ms

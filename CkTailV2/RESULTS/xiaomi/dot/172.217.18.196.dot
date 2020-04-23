@@ -1,0 +1,8 @@
+digraph LTS {
+S00[shape=point]
+S1[label=S1,shape=circle];
+S2[label=S2,shape=circle];
+S00 -> S1
+S1 -> S2[label ="?request(Host=192.168.13.156|||Dest=172.217.18.196|||request=0ca920e0e3a3bbedf626d1fb20f36da1d194b061687781)"];
+S2 -> S1[label ="!response(Host=172.217.18.196|||Dest=192.168.13.156|||response=10003c1c7b9cd006334c447ee728ca553dd1e0716d16ed2b)"];
+}

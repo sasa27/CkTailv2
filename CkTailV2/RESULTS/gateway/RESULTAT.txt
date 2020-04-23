@@ -1,0 +1,45 @@
+192.168.1.7.dot contains :
+2 states
+8 transitions
+
+192.168.1.53.dot contains :
+4 states
+8 transitions
+
+192.168.1.22.dot contains :
+2 states
+5 transitions
+
+192.168.1.2.dot contains :
+41 states
+109 transitions
+
+192.168.1.23.dot contains :
+2 states
+6 transitions
+
+192.168.1.11.dot contains :
+14 states
+34 transitions
+
+192.168.1.52.dot contains :
+4 states
+8 transitions
+
+192.168.1.51.dot contains :
+2 states
+3 transitions
+
+192.168.1.21.dot contains :
+2 states
+3 transitions
+
+--------------------------------
+TOTAL :
+73 States
+184 Transitions
+Correlation Duration: 73 ms
+Clustering Duration: 22 ms
+KTail Duration: 25 ms
+Parser Duration: 59 ms
+Program Duration: 206 ms

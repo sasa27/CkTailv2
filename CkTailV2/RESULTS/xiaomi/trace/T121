@@ -1,0 +1,2 @@
+?Standard query(Host=192.168.13.156|||Dest=192.168.13.1|||A graph.facebook.com)
+!Standard query response(Host=192.168.13.1|||Dest=192.168.13.156|||A graph.facebook.com|||CNAME api.facebook.com|||CNAME star.c10r.facebook.com|||A 157.240.21.16)

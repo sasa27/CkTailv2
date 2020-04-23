@@ -1,0 +1,8 @@
+/json.htm(Host=192.168.43.101|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=switchlight|||idx=2|||switchcmd=On|||rssi)
+OK(Host=192.168.43.76|||Dest=192.168.43.101|||status=200|||response=OK|||type=application/json)
+switchcmd(Host=192.168.43.76|||Dest=192.168.43.202|||group=01|||switchcmd=Off)
+type(Host=192.168.43.202|||Dest=192.168.43.202|||type=switch|||switchcmd=Off)
+response(Host=192.168.43.202|||Dest=192.168.43.76|||status=0300|||response=00)
+switchcmd(Host=192.168.43.76|||Dest=192.168.43.203|||group=02|||switchcmd=Off)
+type(Host=192.168.43.203|||Dest=192.168.43.203|||type=switch|||switchcmd=Off)
+response(Host=192.168.43.203|||Dest=192.168.43.76|||status=0300|||response=00)

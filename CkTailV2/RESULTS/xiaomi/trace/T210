@@ -1,0 +1,2 @@
+?Standard query(Host=192.168.13.156|||Dest=192.168.13.1|||A data.mistat.xiaomi.com)
+!Standard query response(Host=192.168.13.1|||Dest=192.168.13.156|||A data.mistat.xiaomi.com|||CNAME o.data.mistat.xiaomi.com|||CNAME cname.mistat.dev.mi.com|||CNAME lb-miui-08-348964874.ap-southeast-1.elb.amazonaws.com|||A 52.221.0.100|||A 52.220.207.62|||A 52.220.120.11|||A 52.221.168.207|||A 54.254.228.6|||A 52.77.64.144|||A 52.220.81.180|||A 52.220.54.195)

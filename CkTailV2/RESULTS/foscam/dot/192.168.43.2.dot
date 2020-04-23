@@ -1,0 +1,43 @@
+digraph LTS {
+S00[shape=point]
+S1[label=S1,shape=circle];
+S2[label=S2,shape=circle];
+S3[label=S3,shape=circle];
+S4[label=S4,shape=circle];
+S5[label=S5,shape=circle];
+S6[label=S6,shape=circle];
+S7[label=S7,shape=circle];
+S8[label=S8,shape=circle];
+S9[label=S9,shape=circle];
+S10[label=S10,shape=circle];
+S11[label=S11,shape=circle];
+S12[label=S12,shape=circle];
+S13[label=S13,shape=circle];
+S14[label=S14,shape=circle];
+S15[label=S15,shape=circle];
+S16[label=S16,shape=circle];
+S17[label=S17,shape=circle];
+S18[label=S18,shape=circle];
+S19[label=S19,shape=circle];
+S00 -> S1
+S1 -> S2[label ="?null(Host=192.168.43.17|||Dest=192.168.43.2)"];
+S1 -> S5[label ="?C(Host=192.168.43.17|||Dest=192.168.43.2|||command=connect|||address=totosmtp port=25)"];
+S2 -> S3[label ="!S(Host=192.168.43.2|||Dest=192.168.43.17|||status=250|||response=Queued)"];
+S3 -> S4[label ="?C(Host=192.168.43.17|||Dest=192.168.43.2|||command=QUIT)"];
+S4 -> S1[label ="!S(Host=192.168.43.2|||Dest=192.168.43.17|||status=221|||response=goodbye)"];
+S5 -> S6[label ="!S(Host=192.168.43.2|||Dest=192.168.43.17|||status=220|||response=totosmtp ESMTP)"];
+S6 -> S7[label ="?C(Host=192.168.43.17|||Dest=192.168.43.2|||command=EHLO|||param=localhost)"];
+S7 -> S8[label ="!S(Host=192.168.43.2|||Dest=192.168.43.17|||status=250|||response=totosmtp | 250 SIZE 20480000 | 250 AUTH LOGIN | 250 HELP)"];
+S8 -> S9[label ="?C(Host=192.168.43.17|||Dest=192.168.43.2|||command=AUTH|||param=LOGIN)"];
+S9 -> S10[label ="!S(Host=192.168.43.2|||Dest=192.168.43.17|||status=334|||response=VXNlcm5hbWU6)"];
+S10 -> S11[label ="?C(Host=192.168.43.17|||Dest=192.168.43.2|||command=User:|||param=dG90bzEyMy50aGVzZUBzbXRwLnRvdG8uY29t)"];
+S11 -> S12[label ="!S(Host=192.168.43.2|||Dest=192.168.43.17|||status=334|||response=UGFzc3dvcmQ6)"];
+S12 -> S13[label ="?C(Host=192.168.43.17|||Dest=192.168.43.2|||command=Pass:|||param=VG9UbzEyMzQ=)"];
+S13 -> S14[label ="!S(Host=192.168.43.2|||Dest=192.168.43.17|||status=235|||response=authenticated.)"];
+S14 -> S15[label ="?C(Host=192.168.43.17|||Dest=192.168.43.2|||command=MAIL|||param=FROM:<toto123.these@gmail.com>)"];
+S15 -> S16[label ="!S(Host=192.168.43.2|||Dest=192.168.43.17|||status=250|||response=OK)"];
+S16 -> S17[label ="?C(Host=192.168.43.17|||Dest=192.168.43.2|||command=RCPT|||param=TO:<elliott.blot@gmail.com>)"];
+S17 -> S18[label ="!S(Host=192.168.43.2|||Dest=192.168.43.17|||status=250|||response=OK)"];
+S18 -> S19[label ="?C(Host=192.168.43.17|||Dest=192.168.43.2|||command=DATA)"];
+S19 -> S1[label ="!S(Host=192.168.43.2|||Dest=192.168.43.17|||status=354|||response=OK, send.)"];
+}

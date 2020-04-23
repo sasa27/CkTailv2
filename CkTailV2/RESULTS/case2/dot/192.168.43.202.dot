@@ -1,0 +1,26 @@
+digraph LTS {
+S00[shape=point]
+S1[label=S1,shape=circle];
+S2[label=S2,shape=circle];
+S3[label=S3,shape=circle];
+S4[label=S4,shape=circle];
+S5[label=S5,shape=circle];
+S6[label=S6,shape=circle];
+S7[label=S7,shape=circle];
+S8[label=S8,shape=circle];
+S00 -> S1
+S1 -> S2[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.202|||group=01|||switchcmd=On)"];
+S1 -> S4[label ="type(Host=192.168.43.202|||Dest=192.168.43.202|||type=switch|||switchcmd=On)"];
+S1 -> S5[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.202|||group=01|||switchcmd=Off)"];
+S1 -> S6[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.202|||group=01|||switchcmd=On)"];
+S2 -> S3[label ="type(Host=192.168.43.202|||Dest=192.168.43.202|||type=switch|||switchcmd=On)"];
+S2 -> S6[label ="type(Host=192.168.43.202|||Dest=192.168.43.202|||type=switch|||switchcmd=On)"];
+S2 -> S7[label ="type(Host=192.168.43.202|||Dest=192.168.43.202|||type=switch|||switchcmd=On)"];
+S3 -> S4[label ="!response(Host=192.168.43.202|||Dest=192.168.43.76|||status=0300|||response=00)"];
+S4 -> S5[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.202|||group=01|||switchcmd=Off)"];
+S5 -> S6[label ="type(Host=192.168.43.202|||Dest=192.168.43.202|||type=switch|||switchcmd=Off)"];
+S5 -> S7[label ="type(Host=192.168.43.202|||Dest=192.168.43.202|||type=switch|||switchcmd=Off)"];
+S6 -> S1[label ="!response(Host=192.168.43.202|||Dest=192.168.43.76|||status=0300|||response=00)"];
+S7 -> S8[label ="!response(Host=192.168.43.202|||Dest=192.168.43.76|||status=0300|||response=00)"];
+S8 -> S2[label ="?switchcmd(Host=192.168.43.76|||Dest=192.168.43.202|||group=01|||switchcmd=On)"];
+}

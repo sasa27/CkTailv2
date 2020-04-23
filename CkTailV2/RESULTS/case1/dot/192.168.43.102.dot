@@ -1,0 +1,45 @@
+digraph LTS {
+S00[shape=point]
+S1[label=S1,shape=circle];
+S2[label=S2,shape=circle];
+S3[label=S3,shape=circle];
+S4[label=S4,shape=circle];
+S5[label=S5,shape=circle];
+S6[label=S6,shape=circle];
+S7[label=S7,shape=circle];
+S8[label=S8,shape=circle];
+S9[label=S9,shape=circle];
+S10[label=S10,shape=circle];
+S11[label=S11,shape=circle];
+S12[label=S12,shape=circle];
+S13[label=S13,shape=circle];
+S00 -> S1
+S1 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=switchlight|||idx=2|||switchcmd=Off|||rssi)"];
+S1 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=switchlight|||idx=2|||switchcmd=On|||rssi)"];
+S1 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;52.00;1|||rssi)"];
+S1 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;55.00;1|||rssi)"];
+S1 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;53.00;1|||rssi)"];
+S1 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;54.00;1|||rssi)"];
+S1 -> S3[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;53.00;1|||rssi)"];
+S1 -> S3[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;54.00;1|||rssi)"];
+S1 -> S3[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;55.00;1|||rssi)"];
+S1 -> S3[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;52.00;1|||rssi)"];
+S1 -> S5[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=switchlight|||idx=2|||switchcmd=Off|||rssi)"];
+S1 -> S6[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=switchlight|||idx=2|||switchcmd=Off|||rssi)"];
+S1 -> S8[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=switchlight|||idx=2|||switchcmd=Off|||rssi)"];
+S1 -> S10[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=switchlight|||idx=2|||switchcmd=Off|||rssi)"];
+S1 -> S12[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=switchlight|||idx=2|||switchcmd=On|||rssi)"];
+S2 -> S1[label ="?OK(Host=192.168.43.76|||Dest=192.168.43.102|||status=200|||response=OK|||type=application/json)"];
+S3 -> S4[label ="?OK(Host=192.168.43.76|||Dest=192.168.43.102|||status=200|||response=OK|||type=application/json)"];
+S4 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=switchlight|||idx=2|||switchcmd=On|||rssi)"];
+S5 -> S2[label ="?OK(Host=192.168.43.76|||Dest=192.168.43.102|||status=200|||response=OK|||type=application/json)"];
+S5 -> S5[label ="?OK(Host=192.168.43.76|||Dest=192.168.43.102|||status=200|||response=OK|||type=application/json)"];
+S6 -> S7[label ="?OK(Host=192.168.43.76|||Dest=192.168.43.102|||status=200|||response=OK|||type=application/json)"];
+S7 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;54.00;1|||rssi)"];
+S8 -> S9[label ="?OK(Host=192.168.43.76|||Dest=192.168.43.102|||status=200|||response=OK|||type=application/json)"];
+S9 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;52.00;1|||rssi)"];
+S10 -> S11[label ="?OK(Host=192.168.43.76|||Dest=192.168.43.102|||status=200|||response=OK|||type=application/json)"];
+S11 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=udevice|||idx=1|||nvalue|||svalue=26.00;53.00;1|||rssi)"];
+S12 -> S13[label ="?OK(Host=192.168.43.76|||Dest=192.168.43.102|||status=200|||response=OK|||type=application/json)"];
+S13 -> S2[label ="!/json.htm(Host=192.168.43.102|||Dest=192.168.43.76|||Verb=GET|||Uri=/json.htm|||type=command|||param=switchlight|||idx=2|||switchcmd=Off|||rssi)"];
+}

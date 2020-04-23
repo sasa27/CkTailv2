@@ -1,0 +1,5 @@
+switchcmd(Host=192.168.43.76|||Dest=192.168.43.203|||group=02|||switchcmd=Off)
+response(Host=192.168.43.203|||Dest=192.168.43.76|||status=0300|||response=00)
+type(Host=192.168.43.76|||Dest=192.168.43.76|||type=savedata|||switchcmd=Off)
+switchcmd(Host=192.168.43.76|||Dest=192.168.43.203|||group=02|||switchcmd=On)
+response(Host=192.168.43.203|||Dest=192.168.43.76|||status=0300|||response=00;)

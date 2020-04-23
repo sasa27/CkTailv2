@@ -1,0 +1,4 @@
+/(Host=192.168.13.156|||Dest=213.186.33.3|||Verb=GET|||Uri=/)
+OK(Host=213.186.33.3|||Dest=192.168.13.156|||status=200|||response=OK|||type=application/javascript)
+/wp-content/uploads/2016/02/data_lab_home.png(Host=192.168.13.156|||Dest=213.186.33.3|||Verb=GET|||Uri=/wp-content/uploads/2016/02/data_lab_home.png)
+OK(Host=213.186.33.3|||Dest=192.168.13.156|||status=200|||response=OK|||type=PNG)
