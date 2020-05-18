@@ -46,7 +46,7 @@ public class MainSplit {
 			T.addAll(Split(trace));
 		}
 		else if (mode.equals("id")) {
-			T.addAll(SplitID(trace));
+			//T.addAll(SplitID(trace));
 		}
 		System.out.println("split done");
 		final long timesplit2 = System.currentTimeMillis();
