@@ -19,6 +19,14 @@ public class MapperOptions {
 		    MainSplit.output = line.getOptionValue("output");
 		    
 		    
+		    boolean idmode = line.hasOption("id");
+		    if(idmode) {
+		    	MainSplit.mode = "id";
+		    }
+		    else {
+		    	MainSplit.mode = "classic"; 
+		    }
+		    		
 		    // Timer
 		    boolean timerMode = line.hasOption("timer");
 		    if(timerMode) {
@@ -72,6 +80,13 @@ public class MapperOptions {
 				.required(true)
 				.build();
 
+	    final Option modeOption = Option.builder("id")
+				.longOpt("sessID")
+				.desc("use session id")
+				.hasArg(false)
+				.argName("sessID")
+				.required(false)
+				.build();
 	
 	    final Options options = new Options();
 	
@@ -79,7 +94,8 @@ public class MapperOptions {
 	    options.addOption(regexOption);
 	    options.addOption(timerFileOption);
 	    options.addOption(outputOption);
-	
+	    options.addOption(modeOption);
+	    
 	    return options;
 	}
 }

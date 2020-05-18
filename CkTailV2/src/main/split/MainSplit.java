@@ -15,6 +15,7 @@ public class MainSplit {
 	public static String log;
 	public static String output;
 	public static boolean timerMode;
+	public static String mode;
 
 	public static HashMap<String, Double> means;
 	public static Trace trace;
@@ -41,7 +42,12 @@ public class MainSplit {
 		final long timesplit1 = System.currentTimeMillis();
 		Dep = new Dependency();
 		logOrigin = trace;
-		T.addAll(Split(trace));
+		if (mode.equals("classic")) {
+			T.addAll(Split(trace));
+		}
+		else if (mode.equals("id")) {
+			T.addAll(SplitID(trace));
+		}
 		System.out.println("split done");
 		final long timesplit2 = System.currentTimeMillis();
 		final long timegenfile1 = System.currentTimeMillis();
