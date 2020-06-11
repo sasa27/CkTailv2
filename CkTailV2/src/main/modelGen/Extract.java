@@ -78,7 +78,13 @@ public class Extract {
 		String Host = "????";
 		int h = sequence.indexOf("Host=");
 		if (h != -1) { //TODO else throw exception
-			Host = sequence.substring(h + 5, sequence.indexOf(separator, h+5));
+			//Host = sequence.substring(h + 5, sequence.indexOf(separator, h+5));
+			if (sequence.indexOf(separator, h+5) > h) {
+				Host = sequence.substring(h + 5, sequence.indexOf(separator, h+5));
+			}
+			else {
+				Host = sequence.substring(h + 5, sequence.indexOf(")", h+5));
+			}
 		}
 		return Host;
 	}

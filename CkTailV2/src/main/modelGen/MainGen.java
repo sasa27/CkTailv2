@@ -112,7 +112,13 @@ public class MainGen {
 		if (event.startsWith("!")) {
 			int h = event.indexOf("Host=");
 			if (h != -1) {
-				return event.substring(h + 5, event.indexOf(separator, h + 5));
+				if (event.indexOf(separator, h+5) > h) {
+					return event.substring(h + 5, event.indexOf(separator, h + 5));
+				}
+				else {
+					return event.substring(h + 5, event.indexOf(")", h + 5));
+				}
+				//return event.substring(h + 5, event.indexOf(separator, h + 5));
 				/* 5 is the length of "Host=" */
 			}
 		}

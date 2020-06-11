@@ -141,9 +141,9 @@ public class MainSplit {
 					continue eventAnalysis;			
 				}
 				//case 4
-				if (aj.isReq() && SA.contains(aj.getFrom()) && (tprime.isEmpty() || checkTime(tprime.getEvent(0), aj) /*|| checkDependencies(tprime, aj)*/)) {
+				if (aj.isReq() && SA.contains(aj.getFrom()) && (tprime.isEmpty() || checkTime(tprime.getEvent(0), aj) || checkDependencies(tprime, aj))) {
 					//System.out.println("case 4 : " + aj.debug());
-					//checkDependencies(tprime, aj); //make dep if not done
+					checkDependencies(tprime, aj); //make dep if not done
 					tprime.addEvent(aj);
 					ArrayList<Event> LR = new ArrayList<Event>();
 					LR.add(aj);
@@ -155,9 +155,9 @@ public class MainSplit {
 					continue eventAnalysis;	
 				}
 				//case 5
-				if (aj.isInter() && (tprime.isEmpty() || checkTime(tprime.getEvent(0), aj) /*|| checkDependencies(tprime, aj)*/ )) {
+				if (aj.isInter() && (tprime.isEmpty() || checkTime(tprime.getEvent(0), aj) || checkDependencies(tprime, aj) )) {
 					//System.out.println("case 5 : " + aj.debug());
-					//checkDependencies(tprime, aj); //make dep if not done
+					checkDependencies(tprime, aj); //make dep if not done
 					tprime.addEvent(aj);
 					i++;
 					continue eventAnalysis;	
@@ -230,9 +230,9 @@ public class MainSplit {
 						continue eventAnalysis;			
 					}
 					//case 4
-					if (aj.isReq() && SA.contains(aj.getFrom()) && (i == 1 || checkTime(t.getEvent(0), aj) || checkDependencies(t.subTrace(0, i), aj) /*|| checkDependenciesID(t, t.subTrace(0, i), aj)*/)) {
-						//checkDependenciesID(t, t.subTrace(0, i), aj); //make dep if not done
-						checkDependencies(t.subTrace(0, i), aj);
+					if (aj.isReq() && SA.contains(aj.getFrom()) && (i == 1 || checkTime(t.getEvent(0), aj) /*|| checkDependencies(t.subTrace(0, i), aj) */|| checkDependenciesID(t, t.subTrace(0, i), aj))) {
+						checkDependenciesID(t, t.subTrace(0, i), aj); //make dep if not done
+						//checkDependencies(t.subTrace(0, i), aj);
 						//System.out.println("case4");
 						ArrayList<Event> LR = new ArrayList<Event>();
 						LR.add(aj);

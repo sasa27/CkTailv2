@@ -70,7 +70,13 @@ public class Group {
 		if (event.startsWith("!")) {
 			int h = event.indexOf("Host=");
 			if (h != -1) {
-				ID = event.substring(h + 5, event.indexOf(separator, h + 5));
+				if (event.indexOf(separator, h+5) > h) {
+					ID = event.substring(h + 5, event.indexOf(separator, h + 5));
+				}
+				else {
+					ID = event.substring(h + 5, event.indexOf(")", h + 5));
+				}
+				//ID = event.substring(h + 5, event.indexOf(separator, h + 5));
 				/* 5 is the length of "Host=" */
 			}
 		}
