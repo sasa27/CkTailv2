@@ -8,6 +8,7 @@ public class Main {
 	public static String regex;
 	public static String output;
 	static boolean timerMode;
+	public static String mode;
 	
 	public static void main(String[] args) {
 		try {
@@ -19,7 +20,7 @@ public class Main {
 		createDir();
 		String tmp = output + "/splitres";
 		final long timeSplit1 = System.currentTimeMillis();
-		String[] argsSplit = {"-i", log, "-r", regex, "-o", tmp};
+		String[] argsSplit = {"-i", log, "-r", regex, "-o", tmp, mode};
 		main.split.MainSplit.main(argsSplit);
 		final long timeSplit2 = System.currentTimeMillis();
 		

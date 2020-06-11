@@ -141,6 +141,10 @@ public class Trace {
 		return seq.indexOf(e);
 	}
 	
+	public int getSize() {
+		return seq.size();
+	}
+	
 	public Event lastReq(String comp) {
 		for (int i = seq.size()-1; i >= 0; i--) {
 			Event e = seq.get(i);

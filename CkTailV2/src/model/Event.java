@@ -14,9 +14,12 @@ public class Event {
 	public static String from = "Host";
 	public static String to = "Dest";
 
+	private String session;
+	
 	private String label;
 	private String separator = "|||";
 	private ArrayList<String> params;
+	private ArrayList<String> paramsSess;
 	public String date;  //public for debug only
 
 
@@ -24,10 +27,19 @@ public class Event {
 		date = m.group("date");
 		label = m.group("label");
 		params = new ArrayList<String>();
+		paramsSess = new ArrayList<String>();
 		int n = 1;
 		try {
 			while(m.group("param" + n) != null) {
-				params.add(m.group("param" + n));
+				if (m.group("param" + n).contains("session=")) {
+					//System.out.println(m.group("param" + n));
+					session = m.group("param" + n);
+				}
+				else {
+					params.add(m.group("param" + n));
+					
+				}
+				paramsSess.add(m.group("param" + n)); 
 				n++;
 			}
 		}catch(IllegalArgumentException e) {
@@ -44,7 +56,11 @@ public class Event {
 	public ArrayList<String> getparams() {
 		return params;
 	}
-
+	
+	public ArrayList<String> getparamsSess() {
+		return paramsSess;
+	}
+	
 	public String getFrom() {
 		String res = "";
 		for (String param:params) {
@@ -102,8 +118,8 @@ public class Event {
 	}
 
 	public boolean dataSimilarity(Event ai) {
-		ArrayList<String> paramsi = ai.getparams();
-		ArrayList<String> paramsj = this.getparams();
+		ArrayList<String> paramsi = ai.getparamsSess();
+		ArrayList<String> paramsj = this.getparamsSess();
 		for (String parami: paramsi) {
 			if (!(parami.contains(from) || parami.contains(to))) {
 				for (String paramj: paramsj) {
@@ -148,6 +164,12 @@ public class Event {
 		else {
 			return false;
 		}
+	}
+
+
+	public String getSessionID() {
+		//String res = session.substring(this.toString().indexOf("session=") + 8);
+		return session;
 	}
 
 

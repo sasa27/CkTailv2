@@ -21,7 +21,7 @@ public class MainSplit {
 	public static Trace trace;
 	public static Regex regex;
 	public static Trace logOrigin;
-	public static double interval = 2000.0;//in milliseconds 
+	public static double interval = 1000.0;//in milliseconds 
 	//public static double fact = 10.0;
 
 	public static Dependency Dep;
@@ -42,11 +42,14 @@ public class MainSplit {
 		final long timesplit1 = System.currentTimeMillis();
 		Dep = new Dependency();
 		logOrigin = trace;
+		System.out.println("mode :" + mode);
 		if (mode.equals("classic")) {
+			System.out.println("mode classic");
 			T.addAll(Split(trace));
 		}
 		else if (mode.equals("id")) {
-			//T.addAll(SplitID(trace));
+			System.out.println("mode id");
+			T.addAll(SplitID(trace));
 		}
 		System.out.println("split done");
 		final long timesplit2 = System.currentTimeMillis();
@@ -107,6 +110,7 @@ public class MainSplit {
 				//case 1
 				ArrayList<Event> LReq = C1(SR, aj);	
 				if(LReq != null) {
+					//System.out.println("case 1 : " + aj.debug());
 					tprime.addEvent(aj);
 					OLReq.add(LReq.get(LReq.size() -1));
 					LReq.remove(LReq.size() - 1);
@@ -116,7 +120,8 @@ public class MainSplit {
 					continue eventAnalysis;	
 				}
 				//case 2
-				if(C2(OLReq, aj)) {;
+				if(C2(OLReq, aj)) {
+					//System.out.println("case 2 : " + aj.debug());
 					tprime.addEvent(aj);
 					SA.add(aj.getFrom());
 					SA.add(aj.getTo());
@@ -125,36 +130,40 @@ public class MainSplit {
 				}
 				//case 3
 				LReq = C3(SR, aj);
-				if (LReq != null && haveResp(trace.subTrace(i, trace.size()), LReq.get(LReq.size() - 1), aj)) {
+				if (LReq != null /*&& haveResp(trace.subTrace(i, trace.size()), LReq.get(LReq.size() - 1), aj)*/) {
+					//System.out.println("case 3 : " + aj.debug());
 					tprime.addEvent(aj);
 					LReq.add(aj);
 					SA.add(aj.getFrom());
 					SA.add(aj.getTo());
-					Dep.extend(LReq, tprime);
+					Dep.extend(LReq);
 					i++;
 					continue eventAnalysis;			
 				}
 				//case 4
-				if (aj.isReq() && SA.contains(aj.getFrom()) && (tprime.isEmpty() || checkTime(tprime.getEvent(0), aj) || checkDependencies(tprime, aj))) {
-					checkDependencies(tprime, aj); //make dep if not done
+				if (aj.isReq() && SA.contains(aj.getFrom()) && (tprime.isEmpty() || checkTime(tprime.getEvent(0), aj) /*|| checkDependencies(tprime, aj)*/)) {
+					//System.out.println("case 4 : " + aj.debug());
+					//checkDependencies(tprime, aj); //make dep if not done
 					tprime.addEvent(aj);
 					ArrayList<Event> LR = new ArrayList<Event>();
 					LR.add(aj);
 					SR.add(LR);
 					SA.add(aj.getFrom());
 					SA.add(aj.getTo());
-					Dep.extend(LR, tprime);
+					Dep.extend(LR);
 					i++;
 					continue eventAnalysis;	
 				}
 				//case 5
-				if (aj.isInter() && (tprime.isEmpty() || checkTime(tprime.getEvent(0), aj) || checkDependencies(tprime, aj) )) {
-					checkDependencies(tprime, aj); //make dep if not done
+				if (aj.isInter() && (tprime.isEmpty() || checkTime(tprime.getEvent(0), aj) /*|| checkDependencies(tprime, aj)*/ )) {
+					//System.out.println("case 5 : " + aj.debug());
+					//checkDependencies(tprime, aj); //make dep if not done
 					tprime.addEvent(aj);
 					i++;
 					continue eventAnalysis;	
 				}
 				tprimeprime.addEvent(aj);
+				//System.out.println("no case : " + aj.debug());
 				i++;
 			}
 		boolean empty = true;
@@ -175,8 +184,91 @@ public class MainSplit {
 		}
 		return T;
 	}
-	
-	
+
+	public static ArrayList<Trace> SplitID(Trace trace){
+		ArrayList<Trace> T = sepID(trace);
+		HashSet<ArrayList<Event>> SR = new HashSet<ArrayList<Event>>();
+		//HashSet<Event> OLReq = new HashSet<Event>();
+		HashSet<String> SA = new HashSet<String>();
+		for (Trace t : T) {
+			int i = 1;
+			Event aj = t.getEvent(i - 1);
+			//System.out.println("new trace \n");
+			/* initialisation */
+			//ArrayList<Event> LR1 = new ArrayList<Event>();
+			//LR1.add(t.getEvent(0));
+			//SR.add(LR1);
+			//Dep.extend(LR1);
+			SA.add(aj.getFrom());
+			SA.add(aj.getTo());
+			eventAnalysis:
+				while (i <= t.getSize()) {
+					aj = t.getEvent(i - 1);
+					//SA.add(aj.getFrom());
+					//SA.add(aj.getTo());
+					//updateOLreq(OLReq, aj);
+					//case1
+					ArrayList<Event> LReq = C1(SR, aj);	
+					if(LReq != null) {
+						//System.out.println("case1");
+						//OLReq.add(LReq.get(LReq.size() -1));
+						LReq.remove(LReq.size() - 1);
+						SA.add(aj.getFrom());
+						SA.add(aj.getTo());
+						i++;
+						continue eventAnalysis;	
+					}
+					//case 3
+					LReq = C3(SR, aj);
+					if (LReq != null) {
+						//System.out.println("case3");
+						LReq.add(aj);
+						Dep.extend(LReq); 
+						SA.add(aj.getFrom());
+						SA.add(aj.getTo());
+						i++;
+						continue eventAnalysis;			
+					}
+					//case 4
+					if (aj.isReq() && SA.contains(aj.getFrom()) && (i == 1 || checkTime(t.getEvent(0), aj) || checkDependencies(t.subTrace(0, i), aj) /*|| checkDependenciesID(t, t.subTrace(0, i), aj)*/)) {
+						//checkDependenciesID(t, t.subTrace(0, i), aj); //make dep if not done
+						checkDependencies(t.subTrace(0, i), aj);
+						//System.out.println("case4");
+						ArrayList<Event> LR = new ArrayList<Event>();
+						LR.add(aj);
+						SR.add(LR);
+						SA.add(aj.getFrom());
+						SA.add(aj.getTo());
+						Dep.extend(LR);
+						i++;
+						continue eventAnalysis;	
+					}
+					//no case
+					//System.out.println("no case");
+					i++;
+				}
+		}
+		return T;
+	}
+
+	private static ArrayList<Trace> sepID(Trace trace){
+		ArrayList<Trace> res =  new ArrayList<Trace>();
+		ArrayList<String> ids = new ArrayList<String>();
+		int size = trace.getSize();
+		for (int i = 0; i < size; ++i) {
+			Event e = trace.getEvent(i);
+			String id = e.getSessionID();
+			//System.out.println(id);
+			if (!ids.contains(id)) {
+				ids.add(id);
+				res.add(new Trace());
+			}
+			int index = ids.indexOf(id);
+			res.get(index).addEvent(e);
+		}		
+		return res;
+	}
+
 	private static void updateOLreq(HashSet<Event> OLReq, Event ai) {
 		HashSet<Event> Lr = new HashSet<Event>();
 		if (ai.isResp()) {
@@ -195,7 +287,7 @@ public class MainSplit {
 		}
 		OLReq.addAll(Lr);
 	}
-	
+
 
 	/* check if the request aprime  has a response next */
 	private static boolean haveResp(Trace t, Event last, Event ai) {
@@ -237,7 +329,7 @@ public class MainSplit {
 		}
 		return res;
 	}
-	
+
 	private static boolean C2(HashSet<Event> OLReq, Event ai){
 		if (ai.isReq()) {
 			return false;
@@ -302,12 +394,16 @@ public class MainSplit {
 				}
 			}
 		}
-		if (c == 1 && t.containsAll(dependency)) {
-			ArrayList<String> ld = new ArrayList<String>();
-			ld.add(aj.getTo());
-			ld.add(dependency.get(0).getFrom());
-			Dep.add(ld);
-			System.out.println("dep:" + ld);
+		if (c == 1 && t.containsAll(dependency) && !aj.getTo().equals(dependency.get(0).getFrom())) {
+			if (!aj.isInter()) {
+				//System.out.println("haj:" + aj.toString());
+				//System.out.println("here:" + dependency.toString());
+				ArrayList<String> ld = new ArrayList<String>();
+				ld.add(aj.getTo());
+				ld.add(dependency.get(0).getFrom());
+				Dep.add(ld);
+				System.out.println("dep:" + ld);
+			}
 			return true;
 		}
 		else {
@@ -315,24 +411,64 @@ public class MainSplit {
 		}
 	}
 
+	public static boolean checkDependenciesID(Trace origin, Trace t, Event aj) {
+		ArrayList<Event> chain = new ArrayList<Event>();
+		Trace sub = origin.subTrace(0,origin.indexOf(aj));//
+		ArrayList<Event> dependency = new ArrayList<Event>();
+		int c = 0;
+		ArrayList<Event> begin = sub.getEvery(aj.getFrom(), aj.getTo());
+		begin.add(aj);
+		for (@SuppressWarnings("unused") Event e: begin) {
+			ArrayList<Event> dep = checkDependencies(sub, aj, chain);//
+			if (!dep.isEmpty()) {
+				c++;
+				dependency.addAll(dep);
+				if (c > 1) {
+					return false;
+				}
+			}
+		}
+		if (c == 1 && t.containsAll(dependency) && !aj.getTo().equals(dependency.get(0).getFrom())) {
+			if (!aj.isInter()) {
+				//System.out.println("haj:" + aj.toString());
+				//System.out.println("here:" + dependency.toString());
+				ArrayList<String> ld = new ArrayList<String>();
+				ld.add(aj.getTo());
+				ld.add(dependency.get(0).getFrom());
+				Dep.add(ld);
+				System.out.println("dep:" + ld);
+			}
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	public static ArrayList<Event> checkDependencies(Trace t, Event aj, ArrayList<Event> chain) {
+		//System.out.println(t.toString());
 		ArrayList<Event> res = new ArrayList<Event>();
 		Event aprime = null;
 		boolean one = false;
+		int j = 0;
 		for(int i = t.size() - 1 ; i >= 0; i--) {
 			Event e = t.getEvent(i);
+			
 			if (e.dataSimilarity(aj) && e.getTo().equals(aj.getFrom()) && !e.isInter() && !chain.contains(e)){
+				//System.out.println("event:" + aj.toString());
+				//System.out.println("dep:" + e.toString());
 				if (one) {
 					return new ArrayList<Event>();
 				}
 				aprime = e;
 				one = true;
+				j = i;
 				res.add(e);
 				res.addAll(chain);
 			}
 		}
 		if (one) {
-			res = checkDependencies(t, aprime, res);
+			res = checkDependencies(t.subTrace(0, j), aprime, res);
 		}
 		else {
 			res.addAll(chain);

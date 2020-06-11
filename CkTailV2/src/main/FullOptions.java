@@ -5,6 +5,8 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
+import main.split.MainSplit;
+
 
 public class FullOptions {
 	
@@ -17,6 +19,16 @@ public class FullOptions {
 		    Main.log = line.getOptionValue("input");
 		    Main.regex = line.getOptionValue("reg");	 
 		    Main.output = line.getOptionValue("output");
+		    
+		    boolean idmode = line.hasOption("id");
+		    if(idmode) {
+		    	Main.mode = "-id";
+		    }
+		    else {
+		    	Main.mode = ""; 
+		    }
+		    	
+
 		    
 		    
 		    // Timer
@@ -70,6 +82,14 @@ public class FullOptions {
 				.argName("output")
 				.required(true)
 				.build();
+	    
+	    final Option modeOption = Option.builder("id")
+				.longOpt("sessID")
+				.desc("use session id")
+				.hasArg(false)
+				.argName("sessID")
+				.required(false)
+				.build();
 
 	
 	    final Options options = new Options();
@@ -78,6 +98,7 @@ public class FullOptions {
 	    options.addOption(regexOption);
 	    options.addOption(timerFileOption);
 	    options.addOption(outputOption);
+	    options.addOption(modeOption);
 	
 	    return options;
 	}

@@ -24,7 +24,7 @@ public class Dependency {
 	}
 
 	/* extend procedure, add the dependency associated to the new events in l */
-	public void extend(ArrayList<Event> l, Trace t) {
+	public void extend(ArrayList<Event> l) {
 		ArrayList<String> ld = new ArrayList<String>();
 		for (Event e : l) {
 			if (!components.contains(e.getFrom())) {
@@ -39,6 +39,8 @@ public class Dependency {
 			}
 		}
 		if (!Dep.contains(ld)) {
+			//System.out.println("dep:" + ld);
+			//System.out.println("LReq:" + l.get(0).debug());
 			Dep.add(ld);
 		}
 	}
