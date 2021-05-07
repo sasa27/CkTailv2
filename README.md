@@ -1,8 +1,8 @@
-# CkTail
-This is the implementation of the second version CkTail method, used for preliminary tests.
-This new version allow the component to send several responses to a request.
-Internal actions can now be in the log.
+# CkTailv2
 
+Implementation of the model learning approach CkTail (second version)
+
+CkTailv2 aims at recovering models from event logs for communicating systems. It generates behavioural models (IOLTSs) for every component along with dependency graphs lustrating directional dependencies.
 
 ## Usage
 You can compile the program by running the script **build.sh**.
