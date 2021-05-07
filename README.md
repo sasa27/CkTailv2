@@ -3,6 +3,7 @@
 Implementation of the model learning approach CkTail (second version)
 
 CkTailv2 aims at recovering models from event logs for communicating systems. It generates behavioural models (IOLTSs) for every component along with dependency graphs lustrating directional dependencies.
+The example folder includes event logs coming from real IoT systems. The folder Results gives the models generated from these event logs (see below) 
 
 ## Usage
 You can compile the program by running the script **build.sh**.
